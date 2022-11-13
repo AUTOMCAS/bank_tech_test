@@ -1,5 +1,6 @@
 const Bank = require("./bankApp");
 const bank = new Bank();
+jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
 describe("Bank", () => {
   describe("getBalance()", () => {
@@ -33,6 +34,7 @@ describe("Bank", () => {
   });
 
   describe("getStatement()", () => {
+
     const bank = new Bank();
 
     it("returns statement heading", () => {
@@ -67,4 +69,3 @@ describe("Bank", () => {
     });
   });
 });
-

@@ -10,14 +10,18 @@ class Bank {
 
   addDeposit(deposit) {
     this.balance += deposit;
-    this.statement.push(`13/11/2022 || ${deposit.toFixed(2)} || || ${this.getBalance()}`)
+    this.statement.push(
+      `${this.getTodaysDate()} || ${deposit.toFixed(2)} || || ${this.getBalance()}`
+    );
   }
 
   makeWithdrawal(withdrawal) {
     this.balance -= withdrawal;
-    this.statement.push(`13/11/2022 || || ${withdrawal.toFixed(2)} || ${this.getBalance()}`)
-    console.log(this.statement)
-     }
+    this.statement.push(
+      `${this.getTodaysDate()} || || ${withdrawal.toFixed(2)} || ${this.getBalance()}`
+    );
+    console.log(this.statement);
+  }
 
   getTodaysDate() {
     let today = new Date();
@@ -32,6 +36,11 @@ class Bank {
     return this.statement;
   }
 
+  printStatement() {
+    this.statement.forEach((row) => {
+      console.log(row);
+    });
+  }
 }
 
 module.exports = Bank;
