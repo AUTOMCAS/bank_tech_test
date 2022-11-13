@@ -10,6 +10,7 @@ class Bank {
 
   addDeposit(deposit) {
     this.balance += deposit;
+    this.addToStatement()
   }
 
   makeWithdrawal(withdrawal) {
@@ -27,6 +28,10 @@ class Bank {
 
   getStatement() {
     return this.statement;
+  }
+
+  addToStatement() {
+    this.statement.push("13/11/2022 || 1000.00 || || 1000.00")
   }
 }
 

@@ -35,10 +35,18 @@ describe("Bank", () => {
   describe("getStatement()", () => {
     const bank = new Bank();
 
-    it("returns heading string", () => {
+    it("returns statement heading", () => {
       expect(bank.getStatement()).toContain(
         "date || credit || debit || balance"
       );
+    });
+
+    it("returns correct info after initial deposit of 1000", () => {
+      let statement = bank.getStatement()
+      bank.addDeposit(1000)
+      
+      let expectedRow = "13/11/2022 || 1000.00 || || 1000.00"
+      expect(statement.includes(expectedRow)).toBe(true)
     });
   });
 });
