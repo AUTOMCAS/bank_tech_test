@@ -13,6 +13,10 @@ describe("Bank", () => {
       bank.addDeposit(100)
       expect(bank.getBalance()).toBe('100.00');
     });
+    it("Adds another 10.55 to the balance", () => {
+      bank.addDeposit(10.55)
+      expect(bank.getBalance()).toBe('110.55');
+    });
   });
 
 });

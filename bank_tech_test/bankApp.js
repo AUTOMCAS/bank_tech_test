@@ -7,6 +7,10 @@ class Bank {
     return this.balance.toFixed(2)
   }
 
+  addDeposit(deposit) {
+    this.balance += deposit
+  }
+
 }
 
 module.exports = Bank
