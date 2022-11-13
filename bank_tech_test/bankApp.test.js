@@ -25,4 +25,11 @@ describe("Bank", () => {
       expect(bank.getBalance()).toBe("100.00");
     });
   });
+
+  describe("getTodaysDate()", () => {
+    it("returns todays date", () => {
+      expect(bank.getTodaysDate()).toEqual("13/11/2022");
+    });
+  });
+
 });
