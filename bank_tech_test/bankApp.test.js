@@ -10,7 +10,7 @@ describe("Bank", () => {
 
   describe("addDeposit", () => {
     it("Adds 100 to the balance", () => {
-      
+      bank.addDeposit(100)
       expect(bank.getBalance()).toBe('100.00');
     });
   });
