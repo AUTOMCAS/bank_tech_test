@@ -32,4 +32,13 @@ describe("Bank", () => {
     });
   });
 
+  describe("getStatement()", () => {
+    const bank = new Bank();
+
+    it("returns heading string", () => {
+      expect(bank.getStatement()).toContain(
+        "date || credit || debit || balance"
+      );
+    });
+  });
 });

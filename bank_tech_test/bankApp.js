@@ -1,6 +1,7 @@
 class Bank {
   constructor() {
     this.balance = 0.0;
+    this.statement = ["date || credit || debit || balance"];
   }
 
   getBalance() {
@@ -22,6 +23,10 @@ class Bank {
     let year = today.getFullYear();
 
     return `${day}/${month}/${year}`;
+  }
+
+  getStatement() {
+    return this.statement;
   }
 }
 
