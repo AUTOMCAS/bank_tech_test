@@ -42,19 +42,29 @@ describe("Bank", () => {
     });
 
     it("returns correct statement after initial deposit of 1000", () => {
-      let statement = bank.getStatement()
-      bank.addDeposit(1000)
-      
-      let expectedRow = "13/11/2022 || 1000.00 || || 1000.00"
-      expect(statement.includes(expectedRow)).toBe(true)
+      let statement = bank.getStatement();
+      bank.addDeposit(1000);
+
+      let expectedRow = "13/11/2022 || 1000.00 || || 1000.00";
+      expect(statement.includes(expectedRow)).toBe(true);
     });
 
     it("returns correct statement after deposit of 2000", () => {
-      let statement = bank.getStatement()
-      bank.addDeposit(2000)
-      
-      let expectedRow = "13/11/2022 || 2000.00 || || 3000.00"
-      expect(statement.includes(expectedRow)).toBe(true)
+      let statement = bank.getStatement();
+      bank.addDeposit(2000);
+
+      let expectedRow = "13/11/2022 || 2000.00 || || 3000.00";
+      expect(statement.includes(expectedRow)).toBe(true);
+    });
+
+    it("returns correct statement after withdrawal of 500", () => {
+      let statement = bank.getStatement();
+      bank.makeWithdrawal(500);
+
+      let expectedRow = "13/11/2022 || || 500.00 || 2500.00";
+      expect(bank.getBalance()).toEqual("2500.00");
+      expect(statement.includes(expectedRow)).toBe(true);
     });
   });
 });
+
