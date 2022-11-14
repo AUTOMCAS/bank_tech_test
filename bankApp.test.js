@@ -31,19 +31,19 @@ describe("Bank", () => {
     });
   });
 
-  describe("addDeposit()", () => {
+  describe("makeDeposit()", () => {
     let bank = new bankApp();
-    xit("Adds 100 to the balance", () => {
+    it("Adds 100 to the balance", () => {
       let statement = bank.getStatement();
-      bank.addDeposit(100);
+      bank.makeDeposit(100);
 
       let expectedRow = "13/11/2022 || 100.00 || || 100.00";
       expect(statement[0]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
-    xit("Adds another 10.55 to the balance", () => {
+    it("Adds another 10.55 to the balance", () => {
       let statement = bank.getStatement();
-      bank.addDeposit(10.55);
+      bank.makeDeposit(10.55);
 
       let expectedRow = "13/11/2022 || 10.55 || || 110.55";
       expect(statement.includes(expectedRow)).toBe(true);

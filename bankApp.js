@@ -9,13 +9,14 @@ class bankApp {
     this.statement = new Statement(this.balance);
   }
 
-  addDeposit(deposit) {
+  makeDeposit(deposit) {
+    let formattedDeposit = this.formatter.convertNumberToCurrency(deposit)
     this.balance.add(deposit);
-    this.statement.add(
-      `${this.formatter.getTodaysDate()} || ${this.formatter.convertNumberToCurrency(
-        deposit
-      )} || || ${this.balance.getBalance()}`
-    );
+    let transaction = {
+      amount: formattedDeposit,
+      type: "deposit",
+    };
+    this.statement.add(transaction);
   }
 
   makeWithdrawal(withdrawal) {
