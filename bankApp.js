@@ -1,7 +1,7 @@
 const Formatter = require("./formatter");
 const Balance = require("./balance");
 
-class Bank {
+class bankApp {
   constructor() {
     this.statement = [];
     this.formatter = new Formatter();
@@ -38,4 +38,4 @@ class Bank {
   }
 }
 
-module.exports = Bank;
+module.exports = bankApp;

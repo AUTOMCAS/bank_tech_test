@@ -1,10 +1,10 @@
-const Bank = require("./bankApp");
+const bankApp = require("./bankApp");
 
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
 describe("Bank", () => {
   describe("getStatement()", () => {
-    let bank = new Bank();
+    let bank = new bankApp();
     it("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
       bank.addDeposit(1000);
@@ -32,7 +32,7 @@ describe("Bank", () => {
   });
 
   describe("addDeposit()", () => {
-    let bank = new Bank();
+    let bank = new bankApp();
     it("Adds 100 to the balance", () => {
       let statement = bank.getStatement();
       bank.addDeposit(100);
@@ -51,7 +51,7 @@ describe("Bank", () => {
   });
 
   describe("makeWithdrawal()", () => {
-    let bank = new Bank();
+    let bank = new bankApp();
     it("Removes 10.55 from the balance", () => {
       let statement = bank.getStatement();
       bank.addDeposit(100);
