@@ -19,7 +19,7 @@ describe("Statement", () => {
 
   describe("add()", () => {
     it("Adds a deposit", () => {
-      const deposit = { amount: "2000.00", type: "deposit" };
+      const deposit = { amount: 2000, type: "deposit" };
       statement.add(deposit);
 
       const statementContent = statement.get();
@@ -41,7 +41,7 @@ describe("Statement", () => {
       balance.add(500);
       const statement = new Statement(balance);
 
-      const deposit = { amount: "500.00", type: "deposit" };
+      const deposit = { amount: 500, type: "deposit" };
       statement.add(deposit);
 
       const statementContent = statement.get();
@@ -54,7 +54,7 @@ describe("Statement", () => {
       balance.subtract(50);
       const statement = new Statement(balance);
 
-      const withdrawal = { amount: "50.00", type: "withdrawal" };
+      const withdrawal = { amount: 50, type: "withdrawal" };
       statement.add(withdrawal);
 
       const statementContent = statement.get();
@@ -66,7 +66,7 @@ describe("Statement", () => {
 
   describe("transactionHandler()", () => {
     it("returns correct formatting for a deposit", () => {
-      transaction = { amount: "500.00", type: "deposit" };
+      transaction = { amount: 500, type: "deposit" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
         " 500.00 || "
@@ -74,7 +74,7 @@ describe("Statement", () => {
     });
 
     it("returns correct formatting for any deposit", () => {
-      transaction = { amount: "400.00", type: "deposit" };
+      transaction = { amount: 400, type: "deposit" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
         " 400.00 || "
@@ -82,7 +82,7 @@ describe("Statement", () => {
     });
 
     it("returns correct formatting for a withdrawal", () => {
-      transaction = { amount: "500.00", type: "withdrawal" };
+      transaction = { amount: 500, type: "withdrawal" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
         " || 500.00 "
@@ -90,7 +90,7 @@ describe("Statement", () => {
     });
 
     it("returns correct formatting for a any withdrawal", () => {
-      transaction = { amount: "200.00", type: "withdrawal" };
+      transaction = { amount: 200, type: "withdrawal" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
         " || 200.00 "

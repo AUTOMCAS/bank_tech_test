@@ -9,22 +9,21 @@ class bankApp {
     this.statement = new Statement(this.balance);
   }
 
-  makeDeposit(deposit) {
-    let formattedDeposit = this.formatter.convertNumberToCurrency(deposit);
-    this.balance.add(deposit);
+  makeDeposit(amount) {
+    this.balance.add(amount); 
 
     let transaction = {
-      amount: formattedDeposit,
+      amount: amount,
       type: "deposit",
     };
     this.statement.add(transaction);
   }
 
-  makeWithdrawal(withdrawal) {
-    let formattedDeposit = this.formatter.convertNumberToCurrency(withdrawal);
-    this.balance.subtract(withdrawal);
+  makeWithdrawal(amount) {
+    this.balance.subtract(amount);
+
     let transaction = {
-      amount: formattedDeposit,
+      amount: amount,
       type: "withdrawal",
     };
     this.statement.add(transaction);
