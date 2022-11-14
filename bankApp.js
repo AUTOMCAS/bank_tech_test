@@ -8,20 +8,20 @@ class Bank {
   }
 
   getBalance() {
-    return this.formatValue(this.balance);
+    return formatter.convertNumberToCurrency(this.balance);
   }
 
   addDeposit(deposit) {
     this.balance += deposit;
     this.statement.push(
-      `${formatter.getTodaysDate()} || ${this.formatValue(deposit)} || || ${this.getBalance()}`
+      `${formatter.getTodaysDate()} || ${formatter.convertNumberToCurrency(deposit)} || || ${this.getBalance()}`
     );
   }
 
   makeWithdrawal(withdrawal) {
     this.balance -= withdrawal;
     this.statement.push(
-      `${formatter.getTodaysDate()} || || ${this.formatValue(withdrawal)} || ${this.getBalance()}`
+      `${formatter.getTodaysDate()} || || ${formatter.convertNumberToCurrency(withdrawal)} || ${this.getBalance()}`
     );
   }
 
@@ -34,10 +34,6 @@ class Bank {
     this.statement.forEach((statementRow) => {
       console.log(statementRow);
     });
-  }
-
-  formatValue(value) {
-    return value.toFixed(2)
   }
 }
 

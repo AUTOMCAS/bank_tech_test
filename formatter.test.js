@@ -10,5 +10,12 @@ describe("Formatter", () => {
     });
   });
 
+  describe("convertNumberToCurrency()", () => {
+    it("returns formatted number in 0.00 format", () => {
+      expect(formatter.convertNumberToCurrency(100)).toEqual("100.00");
+      expect(formatter.convertNumberToCurrency(100.55)).toEqual("100.55");
+    });
+  });
+
 })
 

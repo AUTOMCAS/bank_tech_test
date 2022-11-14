@@ -7,6 +7,10 @@ class Formatter {
 
     return `${day}/${month}/${year}`;
   }
+
+  convertNumberToCurrency(number) {
+    return number.toFixed(2)
+  }
 }
 
 module.exports = Formatter;
