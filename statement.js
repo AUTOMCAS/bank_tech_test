@@ -20,7 +20,7 @@ class Statement {
 
   transactionHandler(transaction) {
     if (transaction.type == "deposit") return ` 500.00 || `
-    return ` || 500.00`
+    return ` || ${transaction.amount}`
   }
 
   getHeader() {
