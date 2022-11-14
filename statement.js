@@ -19,7 +19,7 @@ class Statement {
    }
 
   transactionHandler(transaction) {
-    if (transaction.type == "deposit") return ` 500.00 || `
+    if (transaction.type == "deposit") return ` ${transaction.amount} || `
     return ` || ${transaction.amount}`
   }
 

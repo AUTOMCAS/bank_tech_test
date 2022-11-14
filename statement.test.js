@@ -73,6 +73,14 @@ describe("Statement", () => {
       );
     });
 
+    it("returns correct formatting for any deposit", () => {
+      transaction = { amount: "400.00", type: "deposit" };
+
+      expect(statement.transactionHandler(transaction)).toEqual(
+        " 400.00 || "
+      );
+    });
+
     it("returns correct formatting for a withdrawal", () => {
       transaction = { amount: "500.00", type: "withdrawal" };
 
@@ -81,7 +89,7 @@ describe("Statement", () => {
       );
     });
 
-    it("returns correct formatting for a different withdrawal", () => {
+    it("returns correct formatting for a any withdrawal", () => {
       transaction = { amount: "200.00", type: "withdrawal" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
