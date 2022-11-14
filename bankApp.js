@@ -6,7 +6,7 @@ class bankApp {
   constructor() {
     this.formatter = new Formatter();
     this.balance = new Balance();
-    this.statement = new Statement();
+    this.statement = new Statement(this.balance);
   }
 
   addDeposit(deposit) {
