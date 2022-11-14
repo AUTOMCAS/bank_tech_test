@@ -1,40 +1,16 @@
 const Bank = require("./bankApp");
-const bank = new Bank();
+
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
 describe("Bank", () => {
-  describe("getBalance()", () => {
-    it("returns an empty balance", () => {
-      expect(bank.getBalance()).toBe("0.00");
-    });
-  });
-
-  describe("addDeposit()", () => {
-    it("Adds 100 to the balance", () => {
-      bank.addDeposit(100);
-      expect(bank.getBalance()).toBe("100.00");
-    });
-    it("Adds another 10.55 to the balance", () => {
-      bank.addDeposit(10.55);
-      expect(bank.getBalance()).toBe("110.55");
-    });
-  });
-
-  describe("makeWithdrawal()", () => {
-    it("Removes 10.55 from the balance", () => {
-      bank.makeWithdrawal(10.55);
-      expect(bank.getBalance()).toBe("100.00");
-    });
-  });
-
   describe("getStatement()", () => {
-    const bank = new Bank();
-
+    let bank = new Bank();
     it("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
       bank.addDeposit(1000);
 
       let expectedRow = "13/11/2022 || 1000.00 || || 1000.00";
+      expect(statement[0]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
@@ -51,7 +27,38 @@ describe("Bank", () => {
       bank.makeWithdrawal(500);
 
       let expectedRow = "13/11/2022 || || 500.00 || 2500.00";
-      expect(bank.getBalance()).toEqual("2500.00");
+      expect(statement.includes(expectedRow)).toBe(true);
+    });
+  });
+
+  describe("addDeposit()", () => {
+    let bank = new Bank();
+    it("Adds 100 to the balance", () => {
+      let statement = bank.getStatement();
+      bank.addDeposit(100);
+
+      let expectedRow = "13/11/2022 || 100.00 || || 100.00";
+      expect(statement[0]).toEqual(expectedRow);
+      expect(statement.includes(expectedRow)).toBe(true);
+    });
+    it("Adds another 10.55 to the balance", () => {
+      let statement = bank.getStatement();
+      bank.addDeposit(10.55);
+
+      let expectedRow = "13/11/2022 || 10.55 || || 110.55";
+      expect(statement.includes(expectedRow)).toBe(true);
+    });
+  });
+
+  describe("makeWithdrawal()", () => {
+    let bank = new Bank();
+    it("Removes 10.55 from the balance", () => {
+      let statement = bank.getStatement();
+      bank.addDeposit(100);
+      bank.makeWithdrawal(10.55);
+
+      let expectedRow = "13/11/2022 || || 10.55 || 89.45";
+      expect(statement[1]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
   });

@@ -1,27 +1,28 @@
-const Formatter = require('./formatter')
-const formatter = new Formatter()
+const Formatter = require("./formatter");
+const Balance = require("./balance");
 
 class Bank {
   constructor() {
-    this.balance = 0
     this.statement = [];
-  }
-
-  getBalance() {
-    return formatter.convertNumberToCurrency(this.balance);
+    this.formatter = new Formatter();
+    this.balance = new Balance();
   }
 
   addDeposit(deposit) {
-    this.balance += deposit;
+    this.balance.add(deposit);
     this.statement.push(
-      `${formatter.getTodaysDate()} || ${formatter.convertNumberToCurrency(deposit)} || || ${this.getBalance()}`
+      `${this.formatter.getTodaysDate()} || ${this.formatter.convertNumberToCurrency(
+        deposit
+      )} || || ${this.balance.getBalance()}`
     );
   }
 
   makeWithdrawal(withdrawal) {
-    this.balance -= withdrawal;
+    this.balance.subtract(withdrawal);
     this.statement.push(
-      `${formatter.getTodaysDate()} || || ${formatter.convertNumberToCurrency(withdrawal)} || ${this.getBalance()}`
+      `${this.formatter.getTodaysDate()} || || ${this.formatter.convertNumberToCurrency(
+        withdrawal
+      )} || ${this.balance.getBalance()}`
     );
   }
 
@@ -30,7 +31,7 @@ class Bank {
   }
 
   printStatement() {
-    console.log("date || credit || debit || balance")
+    console.log("date || credit || debit || this.balance");
     this.statement.forEach((statementRow) => {
       console.log(statementRow);
     });
