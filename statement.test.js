@@ -4,26 +4,27 @@ const statement = new Statement();
 describe("Statement", () => {
   describe("get()", () => {
     it("initially returns empty statement", () => {
-      
       expect(statement.get()).toEqual([]);
     });
   });
 
   describe("add()", () => {
-    it("Adds a row to statement", () => {
-      let row = "13/11/2022 || 2000.00 || || 3000.00";
-      statement.add(row);
+    it("Adds a deposit", () => {
+      const deposit = { amount: "2000.00", type: "deposit" };
+      statement.add(deposit);
 
-      expect(statement.get()).toEqual([row]);
+      const statementContent = statement.get()
+      console.log(statementContent)
+      expect(statementContent.includes("2000.00")).toBe(true);
     });
+    
   });
 
   describe("getHeader()", () => {
     it("returns statement header", () => {
-
-      expect(statement.getHeader()).toEqual("date || credit || debit || this.balance");
+      expect(statement.getHeader()).toEqual(
+        "date || credit || debit || this.balance"
+      );
     });
   });
-
-
 });

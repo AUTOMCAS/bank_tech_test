@@ -33,7 +33,7 @@ class bankApp {
 
   printStatement() {
     console.log(this.statement.getHeader());
-    this.statement.get.forEach((statementRow) => {
+    this.statement.get().forEach((statementRow) => {
       console.log(statementRow);
     });
   }

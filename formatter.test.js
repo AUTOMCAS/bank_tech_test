@@ -16,6 +16,5 @@ describe("Formatter", () => {
       expect(formatter.convertNumberToCurrency(100.55)).toEqual("100.55");
     });
   });
-
 })
 
