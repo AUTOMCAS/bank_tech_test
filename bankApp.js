@@ -1,11 +1,10 @@
 class Bank {
   constructor() {
     this.balance = 0
-    this.statement = ["date || credit || debit || balance"];
+    this.statement = [];
   }
 
   getBalance() {
-    console.log(this.balance)
     return this.formatValue(this.balance);
    
   }
@@ -19,16 +18,11 @@ class Bank {
 
   makeWithdrawal(withdrawal) {
     this.balance -= withdrawal;
-    this.addToStatement(withdrawal, withdrawal)
-  }
-
-  addToStatement(deposit, withdrawal) {
     this.statement.push(
-      `${this.getTodaysDate()} || ${this.formatValue(deposit)} || ${this.formatValue(withdrawal)} || ${this.getBalance()}`
+      `${this.getTodaysDate()} || || ${this.formatValue(withdrawal)} || ${this.getBalance()}`
     );
-
-    console.log(this.statement)
   }
+
 
   getTodaysDate() {
     let today = new Date();
@@ -44,13 +38,13 @@ class Bank {
   }
 
   printStatement() {
-    this.statement.forEach((row) => {
-      console.log(row);
+    console.log("date || credit || debit || balance")
+    this.statement.forEach((statementRow) => {
+      console.log(statementRow);
     });
   }
 
   formatValue(value) {
-    if (value === null) return
     return value.toFixed(2)
   }
 }

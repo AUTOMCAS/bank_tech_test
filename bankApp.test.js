@@ -37,11 +37,11 @@ describe("Bank", () => {
 
     const bank = new Bank();
 
-    it("returns statement heading", () => {
-      expect(bank.getStatement()).toContain(
-        "date || credit || debit || balance"
-      );
-    });
+    // it("returns statement heading", () => {
+    //   expect(bank.getStatement()).toContain(
+    //     "date || credit || debit || balance"
+    //   );
+    // });
 
     it("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
