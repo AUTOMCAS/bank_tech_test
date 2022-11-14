@@ -5,7 +5,7 @@ jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 describe("Bank", () => {
   describe("getStatement()", () => {
     let bank = new bankApp();
-    it("returns correct statement after initial deposit of 1000", () => {
+    xit("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
       bank.addDeposit(1000);
 
@@ -14,7 +14,7 @@ describe("Bank", () => {
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
-    it("returns correct statement after deposit of 2000", () => {
+   xit("returns correct statement after deposit of 2000", () => {
       let statement = bank.getStatement();
       bank.addDeposit(2000);
 
@@ -22,7 +22,7 @@ describe("Bank", () => {
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
-    it("returns correct statement after withdrawal of 500", () => {
+    xit("returns correct statement after withdrawal of 500", () => {
       let statement = bank.getStatement();
       bank.makeWithdrawal(500);
 
@@ -33,7 +33,7 @@ describe("Bank", () => {
 
   describe("addDeposit()", () => {
     let bank = new bankApp();
-    it("Adds 100 to the balance", () => {
+    xit("Adds 100 to the balance", () => {
       let statement = bank.getStatement();
       bank.addDeposit(100);
 
@@ -41,7 +41,7 @@ describe("Bank", () => {
       expect(statement[0]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
-    it("Adds another 10.55 to the balance", () => {
+    xit("Adds another 10.55 to the balance", () => {
       let statement = bank.getStatement();
       bank.addDeposit(10.55);
 
@@ -52,7 +52,7 @@ describe("Bank", () => {
 
   describe("makeWithdrawal()", () => {
     let bank = new bankApp();
-    it("Removes 10.55 from the balance", () => {
+    xit("Removes 10.55 from the balance", () => {
       let statement = bank.getStatement();
       bank.addDeposit(100);
       bank.makeWithdrawal(10.55);

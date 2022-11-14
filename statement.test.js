@@ -24,7 +24,7 @@ describe("Statement", () => {
 
     it("adds the current balance to the statement", () => {
       const statementContent = statement.get();
-      expect(statementContent[0].split("|| ").slice(-1)[0]).toEqual("2000.00")
+      expect(statementContent[0].split("|| ").slice(-1)[0]).toEqual("0.00")
     });
 
     it("adds the current date to the statement", () => {
@@ -32,13 +32,17 @@ describe("Statement", () => {
       expect(statementContent[0].split(" || ")[0]).toEqual("13/11/2022")
     });
 
-    xit("Adds a deposit and balance is updated", () => {
+    it("Adds a deposit and balance is updated", () => {
+      const balance = new Balance();
+      balance.add(500)
+      const statement = new Statement(balance);
+
       const deposit = { amount: "500.00", type: "deposit" };
       statement.add(deposit);
 
+
       const statementContent = statement.get();
-      expect(statementContent[1]).toEqual("|| 500.00 || || 2500.00")
-      expect(statementContent[1].includes("2500.00")).toBe(true);
+      expect(statementContent[0].split("|| ").slice(-1)[0]).toEqual("500.00")
     });
   });
 

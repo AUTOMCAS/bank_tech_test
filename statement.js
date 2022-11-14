@@ -14,8 +14,7 @@ class Statement {
   add(transaction) {
     console.log(this.balance.getBalance())
     
-    
-    this.statement.push(`${this.formatter.getTodaysDate()} || ${transaction.amount} || || 2000.00`)
+    this.statement.push(`${this.formatter.getTodaysDate()} || ${transaction.amount} || || ${this.balance.getBalance()}`)
     console.log(this.statement)
   }
 
