@@ -64,39 +64,7 @@ describe("Statement", () => {
 
   });
 
-  describe("transactionHandler()", () => {
-    it("returns correct formatting for a deposit", () => {
-      transaction = { amount: 500, type: "deposit" };
-
-      expect(statement.transactionHandler(transaction)).toEqual(
-        " 500.00 || "
-      );
-    });
-
-    it("returns correct formatting for any deposit", () => {
-      transaction = { amount: 400, type: "deposit" };
-
-      expect(statement.transactionHandler(transaction)).toEqual(
-        " 400.00 || "
-      );
-    });
-
-    it("returns correct formatting for a withdrawal", () => {
-      transaction = { amount: 500, type: "withdrawal" };
-
-      expect(statement.transactionHandler(transaction)).toEqual(
-        " || 500.00 "
-      );
-    });
-
-    it("returns correct formatting for a any withdrawal", () => {
-      transaction = { amount: 200, type: "withdrawal" };
-
-      expect(statement.transactionHandler(transaction)).toEqual(
-        " || 200.00 "
-      );
-    });
-  });
+  
 
   describe("getHeader()", () => {
     it("returns statement header", () => {

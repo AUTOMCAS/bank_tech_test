@@ -11,6 +11,16 @@ class Format {
   convertNumberToCurrency(number) {
     return number.toFixed(2)
   }
+
+  transactionHandler(transaction) {
+    const transactionAmount = this.convertNumberToCurrency(
+      transaction.amount
+    );
+
+    if (transaction.type == "deposit") return ` ${transactionAmount} || `;
+    return ` || ${transactionAmount} `;
+  }
+
 }
 
 module.exports = Format;

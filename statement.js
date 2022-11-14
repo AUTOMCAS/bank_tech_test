@@ -14,18 +14,9 @@ class Statement {
   add(transaction) {
     let date = this.format.getTodaysDate();
     let balance = this.balance.getBalance();
-    let transactionColumns = this.transactionHandler(transaction);
+    let transactionColumns = this.format.transactionHandler(transaction);
 
     this.statement.push(`${date} ||${transactionColumns}|| ${balance}`);
-  }
-
-  transactionHandler(transaction) {
-    const transactionAmount = this.format.convertNumberToCurrency(
-      transaction.amount
-    );
-
-    if (transaction.type == "deposit") return ` ${transactionAmount} || `;
-    return ` || ${transactionAmount} `;
   }
 
   getHeader() {
