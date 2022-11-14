@@ -27,21 +27,8 @@ describe("Bank", () => {
     });
   });
 
-  describe("getTodaysDate()", () => {
-    it("returns todays date", () => {
-      expect(bank.getTodaysDate()).toEqual("13/11/2022");
-    });
-  });
-
   describe("getStatement()", () => {
-
     const bank = new Bank();
-
-    // it("returns statement heading", () => {
-    //   expect(bank.getStatement()).toContain(
-    //     "date || credit || debit || balance"
-    //   );
-    // });
 
     it("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
