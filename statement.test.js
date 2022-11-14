@@ -4,6 +4,7 @@ const statement = new Statement();
 describe("Statement", () => {
   describe("get()", () => {
     it("initially returns empty statement", () => {
+      
       expect(statement.get()).toEqual([]);
     });
   });
@@ -16,4 +17,13 @@ describe("Statement", () => {
       expect(statement.get()).toEqual([row]);
     });
   });
+
+  describe("getHeader()", () => {
+    it("returns statement header", () => {
+
+      expect(statement.getHeader()).toEqual("date || credit || debit || this.balance");
+    });
+  });
+
+
 });

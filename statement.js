@@ -11,6 +11,10 @@ class Statement {
   add(row) {
     this.statement.push(row)
   }
+
+  getHeader() {
+    return "date || credit || debit || this.balance"
+  }
 }
 
 module.exports = Statement

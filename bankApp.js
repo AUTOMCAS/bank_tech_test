@@ -32,8 +32,8 @@ class bankApp {
   }
 
   printStatement() {
-    console.log("date || credit || debit || this.balance");
-    this.statement.forEach((statementRow) => {
+    console.log(this.statement.getHeader());
+    this.statement.get.forEach((statementRow) => {
       console.log(statementRow);
     });
   }
