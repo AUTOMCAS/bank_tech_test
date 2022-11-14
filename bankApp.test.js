@@ -5,24 +5,24 @@ jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 describe("Bank", () => {
   describe("getStatement()", () => {
     let bank = new bankApp();
-    xit("returns correct statement after initial deposit of 1000", () => {
+    it("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
-      bank.addDeposit(1000);
+      bank.makeDeposit(1000);
 
       let expectedRow = "13/11/2022 || 1000.00 || || 1000.00";
       expect(statement[0]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
-   xit("returns correct statement after deposit of 2000", () => {
+   it("returns correct statement after deposit of 2000", () => {
       let statement = bank.getStatement();
-      bank.addDeposit(2000);
+      bank.makeDeposit(2000);
 
       let expectedRow = "13/11/2022 || 2000.00 || || 3000.00";
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
-    xit("returns correct statement after withdrawal of 500", () => {
+    it("returns correct statement after withdrawal of 500", () => {
       let statement = bank.getStatement();
       bank.makeWithdrawal(500);
 
