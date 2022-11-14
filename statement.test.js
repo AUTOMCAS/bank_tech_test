@@ -6,6 +6,10 @@ const statement = new Statement(balance);
 
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
+const splitContent = (content) => {
+  return content.split(" ").join("").split("||");
+};
+
 describe("Statement", () => {
   describe("get()", () => {
     it("initially returns empty statement", () => {
@@ -24,32 +28,56 @@ describe("Statement", () => {
 
     it("adds the current balance to the statement", () => {
       const statementContent = statement.get();
-      expect(statementContent[0].split("|| ").slice(-1)[0]).toEqual("0.00")
+      expect(splitContent(statementContent[0]).slice(-1)[0]).toEqual("0.00");
     });
 
     it("adds the current date to the statement", () => {
       const statementContent = statement.get();
-      expect(statementContent[0].split(" || ")[0]).toEqual("13/11/2022")
+      expect(splitContent(statementContent[0])[0]).toEqual("13/11/2022");
     });
 
     it("Adds a deposit and balance is updated", () => {
       const balance = new Balance();
-      balance.add(500)
+      balance.add(500);
       const statement = new Statement(balance);
 
       const deposit = { amount: "500.00", type: "deposit" };
       statement.add(deposit);
 
+      const statementContent = statement.get();
+      expect(statementContent[0]).toEqual("13/11/2022 || 500.00 || || 500.00")
+    });
+
+    xit("Adds a withdrawal and balance is updated", () => {
+      const balance = new Balance();
+      balance.add(500);
+      balance.subtract(50);
+      const statement = new Statement(balance);
+
+      const withdrawal = { amount: "500.00", type: "withdrawal" };
+      statement.add(withdrawal);
 
       const statementContent = statement.get();
-      expect(statementContent[0].split("|| ").slice(-1)[0]).toEqual("500.00")
+
+      expect(statementContent[0]).toEqual("13/11/2022 || || 50.00 || 450.00")
+    });
+
+  });
+
+  describe("transactionHandler()", () => {
+    it("returns correct formatting for a deposit", () => {
+      transaction = { amount: "500.00", type: "deposit" };
+
+      expect(statement.transactionHandler(transaction)).toEqual(
+        " 500.00 || "
+      );
     });
   });
 
   describe("getHeader()", () => {
     it("returns statement header", () => {
       expect(statement.getHeader()).toEqual(
-        "date || credit || debit || this.balance"
+        "date || credit || debit || balance"
       );
     });
   });

@@ -1,10 +1,10 @@
-const Formatter = require('./formatter')
+const Formatter = require("./formatter");
 
 class Statement {
   constructor(balance) {
-    this.statement = []
-    this.formatter = new Formatter()
-    this.balance = balance
+    this.statement = [];
+    this.formatter = new Formatter();
+    this.balance = balance;
   }
 
   get() {
@@ -12,16 +12,19 @@ class Statement {
   }
 
   add(transaction) {
-    console.log(this.balance.getBalance())
-    
-    this.statement.push(`${this.formatter.getTodaysDate()} || ${transaction.amount} || || ${this.balance.getBalance()}`)
-    console.log(this.statement)
+    let date = this.formatter.getTodaysDate();
+    let balance = this.balance.getBalance();
+
+    this.statement.push(`${date} || ${transaction.amount} || || ${balance}`);
+   }
+
+  transactionHandler(transaction) {
+    return ` 500.00 || `;
   }
 
-
   getHeader() {
-    return "date || credit || debit || this.balance"
+    return "date || credit || debit || balance";
   }
 }
 
-module.exports = Statement
+module.exports = Statement;
