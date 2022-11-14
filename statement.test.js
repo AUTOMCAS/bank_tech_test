@@ -48,13 +48,13 @@ describe("Statement", () => {
       expect(statementContent[0]).toEqual("13/11/2022 || 500.00 || || 500.00")
     });
 
-    xit("Adds a withdrawal and balance is updated", () => {
+    it("Adds a withdrawal and balance is updated", () => {
       const balance = new Balance();
       balance.add(500);
       balance.subtract(50);
       const statement = new Statement(balance);
 
-      const withdrawal = { amount: "500.00", type: "withdrawal" };
+      const withdrawal = { amount: "50.00", type: "withdrawal" };
       statement.add(withdrawal);
 
       const statementContent = statement.get();
@@ -85,7 +85,7 @@ describe("Statement", () => {
       transaction = { amount: "500.00", type: "withdrawal" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
-        " || 500.00"
+        " || 500.00 "
       );
     });
 
@@ -93,7 +93,7 @@ describe("Statement", () => {
       transaction = { amount: "200.00", type: "withdrawal" };
 
       expect(statement.transactionHandler(transaction)).toEqual(
-        " || 200.00"
+        " || 200.00 "
       );
     });
   });

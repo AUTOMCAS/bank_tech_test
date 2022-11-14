@@ -15,12 +15,12 @@ class Statement {
     let date = this.formatter.getTodaysDate();
     let balance = this.balance.getBalance();
 
-    this.statement.push(`${date} || ${transaction.amount} || || ${balance}`);
-   }
+    this.statement.push(`${date} ||${this.transactionHandler(transaction)}|| ${balance}`);
+  }
 
   transactionHandler(transaction) {
-    if (transaction.type == "deposit") return ` ${transaction.amount} || `
-    return ` || ${transaction.amount}`
+    if (transaction.type == "deposit") return ` ${transaction.amount} || `;
+    return ` || ${transaction.amount} `;
   }
 
   getHeader() {
