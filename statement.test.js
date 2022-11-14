@@ -1,7 +1,10 @@
 const Statement = require("./statement");
 const Balance = require("./balance");
+
 const balance = new Balance();
 const statement = new Statement(balance);
+
+jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
 describe("Statement", () => {
   describe("get()", () => {
@@ -26,7 +29,7 @@ describe("Statement", () => {
 
     it("adds the current date to the statement", () => {
       const statementContent = statement.get();
-      expect(statementContent[0].split(" || ")[0]).toEqual("14/11/2022")
+      expect(statementContent[0].split(" || ")[0]).toEqual("13/11/2022")
     });
 
     xit("Adds a deposit and balance is updated", () => {
