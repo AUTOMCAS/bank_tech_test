@@ -72,6 +72,14 @@ describe("Statement", () => {
         " 500.00 || "
       );
     });
+
+    it("returns correct formatting for a withdrawal", () => {
+      transaction = { amount: "500.00", type: "withdrawal" };
+
+      expect(statement.transactionHandler(transaction)).toEqual(
+        " || 500.00"
+      );
+    });
   });
 
   describe("getHeader()", () => {

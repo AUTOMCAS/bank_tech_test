@@ -19,7 +19,8 @@ class Statement {
    }
 
   transactionHandler(transaction) {
-    return ` 500.00 || `;
+    if (transaction.type == "deposit") return ` 500.00 || `
+    return ` || 500.00`
   }
 
   getHeader() {
