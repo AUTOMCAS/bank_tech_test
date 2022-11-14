@@ -1,12 +1,12 @@
-const Statement = require('./statement')
-const statement = new Statement()
+const Statement = require("./statement");
+const statement = new Statement();
 
+describe("Statement", () => {
+  describe("get()", () => {
+    it("initially returns empty statement", () => {
+      expect(statement.get()).toEqual([]);
+    });
+  });
 
-describe('Statement', () => {
-  describe('getStatement()', () => {
-    it('initially returns empty statement', () => {
-      expect(statement.getStatement()).toEqual([])
-    })
-  })
-
-})
+  
+});

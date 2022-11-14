@@ -4,7 +4,7 @@ class Statement {
     this.statement = []
   }
 
-  getStatement() {
+  get() {
     return this.statement;
   }
 }
