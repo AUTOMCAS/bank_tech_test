@@ -12,7 +12,7 @@ class Format {
     return number.toFixed(2)
   }
 
-  transactionHandler(transaction) {
+  transactionColumns(transaction) {
     const transactionAmount = this.convertNumberToCurrency(
       transaction.amount
     );

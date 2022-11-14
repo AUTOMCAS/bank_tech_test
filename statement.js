@@ -14,7 +14,7 @@ class Statement {
   add(transaction) {
     let date = this.format.getTodaysDate();
     let balance = this.balance.getBalance();
-    let transactionColumns = this.format.transactionHandler(transaction);
+    let transactionColumns = this.format.transactionColumns(transaction);
 
     this.statement.push(`${date} ||${transactionColumns}|| ${balance}`);
   }

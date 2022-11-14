@@ -17,11 +17,11 @@ describe("Format", () => {
     });
   });
 
-  describe("transactionHandler()", () => {
+  describe("transactionColumns()", () => {
     it("returns correct formatting for a deposit", () => {
       transaction = { amount: 500, type: "deposit" };
 
-      expect(format.transactionHandler(transaction)).toEqual(
+      expect(format.transactionColumns(transaction)).toEqual(
         " 500.00 || "
       );
     });
@@ -29,7 +29,7 @@ describe("Format", () => {
     it("returns correct formatting for any deposit", () => {
       transaction = { amount: 400, type: "deposit" };
 
-      expect(format.transactionHandler(transaction)).toEqual(
+      expect(format.transactionColumns(transaction)).toEqual(
         " 400.00 || "
       );
     });
@@ -37,7 +37,7 @@ describe("Format", () => {
     it("returns correct formatting for a withdrawal", () => {
       transaction = { amount: 500, type: "withdrawal" };
 
-      expect(format.transactionHandler(transaction)).toEqual(
+      expect(format.transactionColumns(transaction)).toEqual(
         " || 500.00 "
       );
     });
@@ -45,7 +45,7 @@ describe("Format", () => {
     it("returns correct formatting for a any withdrawal", () => {
       transaction = { amount: 200, type: "withdrawal" };
 
-      expect(format.transactionHandler(transaction)).toEqual(
+      expect(format.transactionColumns(transaction)).toEqual(
         " || 200.00 "
       );
     });
