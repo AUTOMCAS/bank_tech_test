@@ -153,19 +153,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Formatter = require("./formatter");
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Format = require("./Format");
 const Balance = require("./balance");
 const Statement = require("./statement");
 &nbsp;
 class bankApp {
   constructor() {
-    this.formatter = new Formatter();
+    this.Format = new Format();
     this.balance = new Balance();
     this.statement = new Statement(this.balance);
   }
 &nbsp;
   makeDeposit(deposit) {
-    let formattedDeposit = this.formatter.convertNumberToCurrency(deposit);
+    let formattedDeposit = this.Format.convertNumberToCurrency(deposit);
     this.balance.add(deposit);
 &nbsp;
     let transaction = {
@@ -176,7 +176,7 @@ class bankApp {
   }
 &nbsp;
   makeWithdrawal(withdrawal) {
-    let formattedDeposit = this.formatter.convertNumberToCurrency(withdrawal);
+    let formattedDeposit = this.Format.convertNumberToCurrency(withdrawal);
     this.balance.subtract(withdrawal);
     let transaction = {
       amount: formattedDeposit,

@@ -1,9 +1,9 @@
-const Formatter = require("./formatter");
+const Format = require("./format");
 
 class Statement {
   constructor(balance) {
     this.statement = [];
-    this.formatter = new Formatter();
+    this.format = new Format();
     this.balance = balance;
   }
 
@@ -12,7 +12,7 @@ class Statement {
   }
 
   add(transaction) {
-    let date = this.formatter.getTodaysDate();
+    let date = this.format.getTodaysDate();
     let balance = this.balance.getBalance();
     let transactionColumns = this.transactionHandler(transaction);
 
@@ -20,7 +20,7 @@ class Statement {
   }
 
   transactionHandler(transaction) {
-    const transactionAmount = this.formatter.convertNumberToCurrency(
+    const transactionAmount = this.format.convertNumberToCurrency(
       transaction.amount
     );
 

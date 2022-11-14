@@ -34,7 +34,7 @@
       <line num="40" count="0" type="stmt"/>
       <line num="45" count="1" type="stmt"/>
     </file>
-    <file name="formatter.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/formatter.js">
+    <file name="Format.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/Format.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="11" type="stmt"/>
       <line num="4" count="11" type="stmt"/>

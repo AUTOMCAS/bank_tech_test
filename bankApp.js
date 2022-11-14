@@ -1,10 +1,8 @@
-const Formatter = require("./formatter");
 const Balance = require("./balance");
 const Statement = require("./statement");
 
 class bankApp {
   constructor() {
-    this.formatter = new Formatter();
     this.balance = new Balance();
     this.statement = new Statement(this.balance);
   }
