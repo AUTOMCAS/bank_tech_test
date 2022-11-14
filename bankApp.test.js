@@ -52,9 +52,9 @@ describe("Bank", () => {
 
   describe("makeWithdrawal()", () => {
     let bank = new bankApp();
-    xit("Removes 10.55 from the balance", () => {
+    it("Removes 10.55 from the balance", () => {
       let statement = bank.getStatement();
-      bank.addDeposit(100);
+      bank.makeDeposit(100);
       bank.makeWithdrawal(10.55);
 
       let expectedRow = "13/11/2022 || || 10.55 || 89.45";

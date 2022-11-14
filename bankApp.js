@@ -10,8 +10,9 @@ class bankApp {
   }
 
   makeDeposit(deposit) {
-    let formattedDeposit = this.formatter.convertNumberToCurrency(deposit)
+    let formattedDeposit = this.formatter.convertNumberToCurrency(deposit);
     this.balance.add(deposit);
+
     let transaction = {
       amount: formattedDeposit,
       type: "deposit",
@@ -20,12 +21,13 @@ class bankApp {
   }
 
   makeWithdrawal(withdrawal) {
+    let formattedDeposit = this.formatter.convertNumberToCurrency(withdrawal);
     this.balance.subtract(withdrawal);
-    this.statement.add(
-      `${this.formatter.getTodaysDate()} || || ${this.formatter.convertNumberToCurrency(
-        withdrawal
-      )} || ${this.balance.getBalance()}`
-    );
+    let transaction = {
+      amount: formattedDeposit,
+      type: "withdrawal",
+    };
+    this.statement.add(transaction);
   }
 
   getStatement() {
