@@ -10,3 +10,7 @@ let bank = new bankApp()
 bank.makeDeposit(amount)
 bank.makeWithdrawal(amount)
 bank.printStatement()
+
+bank.deposit(amount)
+bank.withdrawal(amount)
+bank.printStatement()

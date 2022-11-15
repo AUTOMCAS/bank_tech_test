@@ -8,9 +8,7 @@ class bankApp {
   }
 
   deposit(amount) {
-    if (isNaN(amount)) {
-      throw new Error("Amount must be a number");
-    }
+    this.checkNumberValidity(amount)
 
     const deposit = parseFloat(amount);
     this.balance.add(deposit);
@@ -32,6 +30,13 @@ class bankApp {
     };
     this.statement.add(transaction);
   }
+
+  checkNumberValidity(amount) {
+    if (isNaN(amount)) {
+      throw new Error("Amount must be a number");
+    }
+  }
+
 
   getStatement() {
     return this.statement.get();

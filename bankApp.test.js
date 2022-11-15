@@ -56,7 +56,7 @@ describe("Bank", () => {
       let expectedRow = "13/11/2022 || 10.00 || || 120.55";
       expect(statement[2]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
-    });
+     });
 
     it("Allows user to deposit when amount is a number as a string and to 2 decimal places", () => {
       let statement = bank.getStatement();
@@ -65,12 +65,20 @@ describe("Bank", () => {
       let expectedRow = "13/11/2022 || 0.45 || || 121.00";
       expect(statement[3]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
+      expect(statement.length).toEqual(4);
     });
 
     it("Only allows user to deposit when amount is a number(as string or integer)", () => {
 
       expect(() => bank.deposit("Monies!")).toThrow("Amount must be a number")
     });
+
+    it("Does not add to deposit if amount is invalid", () => {
+      let statement = bank.getStatement();
+      
+      expect(() => bank.deposit("none")).toThrow("Amount must be a number")
+      expect(statement.length).toEqual(4);
+     });
   });
 
   describe("withdraw()", () => {
