@@ -8,7 +8,7 @@ describe("Bank", () => {
     let bank = new bankApp();
     it("returns correct statement after initial deposit of 1000", () => {
       let statement = bank.getStatement();
-      bank.makeDeposit(1000);
+      bank.deposit(1000);
 
       let expectedRow = "13/11/2022 || 1000.00 || || 1000.00";
       expect(statement[0]).toEqual(expectedRow);
@@ -17,7 +17,7 @@ describe("Bank", () => {
 
    it("returns correct statement after deposit of 2000", () => {
       let statement = bank.getStatement();
-      bank.makeDeposit(2000);
+      bank.deposit(2000);
 
       let expectedRow = "13/11/2022 || 2000.00 || || 3000.00";
       expect(statement.includes(expectedRow)).toBe(true);
@@ -25,18 +25,18 @@ describe("Bank", () => {
 
     it("returns correct statement after withdrawal of 500", () => {
       let statement = bank.getStatement();
-      bank.makeWithdrawal(500);
+      bank.withdraw(500);
 
       let expectedRow = "13/11/2022 || || 500.00 || 2500.00";
       expect(statement.includes(expectedRow)).toBe(true);
     });
   });
 
-  describe("makeDeposit()", () => {
+  describe("deposit()", () => {
     let bank = new bankApp();
     it("Adds 100 to the balance", () => {
       let statement = bank.getStatement();
-      bank.makeDeposit(100);
+      bank.deposit(100);
 
       let expectedRow = "13/11/2022 || 100.00 || || 100.00";
       expect(statement[0]).toEqual(expectedRow);
@@ -44,19 +44,19 @@ describe("Bank", () => {
     });
     it("Adds another 10.55 to the balance", () => {
       let statement = bank.getStatement();
-      bank.makeDeposit(10.55);
+      bank.deposit(10.55);
 
       let expectedRow = "13/11/2022 || 10.55 || || 110.55";
       expect(statement.includes(expectedRow)).toBe(true);
     });
   });
 
-  describe("makeWithdrawal()", () => {
+  describe("withdraw()", () => {
     let bank = new bankApp();
     it("Removes 10.55 from the balance", () => {
       let statement = bank.getStatement();
-      bank.makeDeposit(100);
-      bank.makeWithdrawal(10.55);
+      bank.deposit(100);
+      bank.withdraw(10.55);
 
       let expectedRow = "13/11/2022 || || 10.55 || 89.45";
       expect(statement[1]).toEqual(expectedRow);

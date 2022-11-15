@@ -7,7 +7,7 @@ class bankApp {
     this.statement = new Statement(this.balance);
   }
 
-  makeDeposit(amount) {
+  deposit(amount) {
     this.balance.add(amount); 
 
     let transaction = {
@@ -17,7 +17,7 @@ class bankApp {
     this.statement.add(transaction);
   }
 
-  makeWithdrawal(amount) {
+  withdraw(amount) {
     this.balance.subtract(amount);
 
     let transaction = {
