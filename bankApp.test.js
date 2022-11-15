@@ -59,6 +59,15 @@ describe("Bank", () => {
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
+    it("Allows user to deposit when amount is a number as a string and to 2 decimal places", () => {
+      let statement = bank.getStatement();
+      bank.deposit("0.45");
+
+      let expectedRow = "13/11/2022 || 0.45 || || 121.00";
+      expect(statement[3]).toEqual(expectedRow);
+      expect(statement.includes(expectedRow)).toBe(true);
+    });
+
 
   });
 
