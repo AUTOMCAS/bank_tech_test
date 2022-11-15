@@ -9,25 +9,27 @@ class bankApp {
 
   deposit(amount) {
     if (this.checkNumberValidity(amount) == false) return;
-
     const deposit = parseFloat(amount);
-    this.balance.add(deposit);
 
     const transaction = {
       amount: deposit,
       type: "deposit",
     };
 
+    this.balance.add(deposit);
     this.statement.add(transaction);
   }
 
   withdraw(amount) {
-    this.balance.subtract(amount);
+    if (this.checkNumberValidity(amount) == false) return;
+    const withdrawal = parseFloat(amount);
 
     let transaction = {
-      amount: amount,
+      amount: withdrawal,
       type: "withdrawal",
     };
+
+    this.balance.subtract(withdrawal);
     this.statement.add(transaction);
   }
 

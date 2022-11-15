@@ -87,5 +87,12 @@ describe("Bank", () => {
       expect(statement[1]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
+
+    it("Does not subtract from deposit if amount is invalid", () => {
+      let statement = bank.getStatement();
+      bank.withdraw("none");
+
+      expect(statement.length).toEqual(2);
+    });
   });
 });
