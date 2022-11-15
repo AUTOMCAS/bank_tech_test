@@ -1,8 +1,10 @@
 # Bank App tech test
 
-Functionality:
+## Functionality
+[Planning diagram](https://raw.githubusercontent.com/AUTOMCAS/bank_tech_test/main/diagram.png)
+
 - Make a deposit
-- Make a withdrawal
+- Make a withdrawal (users are allowed to be overdrawn)
 - Print a statement with the date, transaction and balance shown as below
 
 ```
@@ -11,6 +13,7 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+
 
 ## Setup
 
@@ -48,7 +51,7 @@ From within the project directory:
 $ node
 
 # Create a new bankApp instance:
-const BankApp = require("./bankApp");
+const BankApp = require("./bankApp")
 const bankApp = new BankApp()
 
 # Make a deposit
