@@ -8,12 +8,15 @@ class bankApp {
   }
 
   deposit(amount) {
-    this.balance.add(amount); 
+    const deposit = parseFloat(amount)
+    
+    this.balance.add(deposit); 
 
-    let transaction = {
-      amount: amount,
+    const transaction = {
+      amount: deposit,
       type: "deposit",
     };
+
     this.statement.add(transaction);
   }
 

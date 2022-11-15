@@ -49,6 +49,17 @@ describe("Bank", () => {
       let expectedRow = "13/11/2022 || 10.55 || || 110.55";
       expect(statement.includes(expectedRow)).toBe(true);
     });
+
+    it("Allows user to deposit when amount is a number as a string", () => {
+      let statement = bank.getStatement();
+      bank.deposit("10");
+
+      let expectedRow = "13/11/2022 || 10.00 || || 120.55";
+      expect(statement[2]).toEqual(expectedRow);
+      expect(statement.includes(expectedRow)).toBe(true);
+    });
+
+
   });
 
   describe("withdraw()", () => {
