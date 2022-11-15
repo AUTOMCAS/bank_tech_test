@@ -33,7 +33,7 @@ describe("Bank", () => {
 
   describe("deposit()", () => {
     let bank = new bankApp();
-    it("Adds 100 to the balance", () => {
+    it("Adds 100 to the balance as integer", () => {
       let statement = bank.getStatement();
       bank.deposit(100);
 
@@ -41,7 +41,7 @@ describe("Bank", () => {
       expect(statement[0]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
     });
-    it("Adds another 10.55 to the balance", () => {
+    it("Adds another 10.55 to the balance as float", () => {
       let statement = bank.getStatement();
       bank.deposit(10.55);
 
@@ -56,7 +56,7 @@ describe("Bank", () => {
       let expectedRow = "13/11/2022 || 10.00 || || 120.55";
       expect(statement[2]).toEqual(expectedRow);
       expect(statement.includes(expectedRow)).toBe(true);
-     });
+    });
 
     it("Allows user to deposit when amount is a number as a string and to 2 decimal places", () => {
       let statement = bank.getStatement();
@@ -68,17 +68,12 @@ describe("Bank", () => {
       expect(statement.length).toEqual(4);
     });
 
-    it("Only allows user to deposit when amount is a number(as string or integer)", () => {
-
-      expect(() => bank.deposit("Monies!")).toThrow("Amount must be a number")
-    });
-
     it("Does not add to deposit if amount is invalid", () => {
       let statement = bank.getStatement();
-      
-      expect(() => bank.deposit("none")).toThrow("Amount must be a number")
+      bank.deposit("none");
+
       expect(statement.length).toEqual(4);
-     });
+    });
   });
 
   describe("withdraw()", () => {

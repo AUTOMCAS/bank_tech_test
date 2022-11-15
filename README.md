@@ -6,10 +6,7 @@
 
 const bankApp = require("./bankApp");
 let bank = new bankApp()
-
-bank.makeDeposit(amount)
-bank.makeWithdrawal(amount)
-bank.printStatement()
+bank.deposit("hi")
 
 bank.deposit(amount)
 bank.withdrawal(amount)
