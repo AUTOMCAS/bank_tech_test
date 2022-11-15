@@ -1,6 +1,5 @@
 const bankApp = require("./bankApp");
 
-
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
 describe("Bank", () => {
@@ -15,7 +14,7 @@ describe("Bank", () => {
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
-   it("returns correct statement after deposit of 2000", () => {
+    it("returns correct statement after deposit of 2000", () => {
       let statement = bank.getStatement();
       bank.deposit(2000);
 
@@ -68,7 +67,10 @@ describe("Bank", () => {
       expect(statement.includes(expectedRow)).toBe(true);
     });
 
+    it("Only allows user to deposit when amount is a number(as string or integer)", () => {
 
+      expect(() => bank.deposit("Monies!")).toThrow("Amount must be a number")
+    });
   });
 
   describe("withdraw()", () => {

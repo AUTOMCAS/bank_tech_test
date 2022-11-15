@@ -8,9 +8,12 @@ class bankApp {
   }
 
   deposit(amount) {
-    const deposit = parseFloat(amount)
-    
-    this.balance.add(deposit); 
+    if (isNaN(amount)) {
+      throw new Error("Amount must be a number");
+    }
+
+    const deposit = parseFloat(amount);
+    this.balance.add(deposit);
 
     const transaction = {
       amount: deposit,
