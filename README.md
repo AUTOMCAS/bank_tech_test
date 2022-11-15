@@ -71,3 +71,14 @@ bankApp.withdraw("Monies!") # invalid
 # Print the statement
 bankApp.printStatement()
 ```
+
+## Thoughts
+
+Issues related to the output being console.logs in node:  
+- `getStatement()` function in `bankApp` class is a little redundant but I struggled to find a way of testing the intended output (printing in node).
+
+- I attempted to use errors when the user inputs incorrect info but I struggled to make it work in both testing and in console.log. 
+
+Error handling could have been moved to its own class to simplify `bankApp` class
+
+Earlier tests could have been refactored as I got more knowledge on how to write relevant tests.
