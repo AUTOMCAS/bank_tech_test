@@ -75,7 +75,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:format.js
+SF:formatter.js
 FN:2,(anonymous_0)
 FN:11,(anonymous_1)
 FN:15,(anonymous_2)

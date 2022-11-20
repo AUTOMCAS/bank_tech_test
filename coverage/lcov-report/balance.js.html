@@ -107,17 +107,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const Format = require('./format')
-const format = new Format()
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const Formatter = require('./formatter')
+const formatter = new Formatter()
 &nbsp;
 class Balance {
   constructor() {
     this.balance = 0
-    this.format = new Format();
+    this.formatter = new Formatter();
   }
 &nbsp;
   getBalance() {
-    return this.format.convertNumberToCurrency(this.balance);
+    return this.formatter.convertNumberToCurrency(this.balance);
   }
 &nbsp;
   add(amount) {

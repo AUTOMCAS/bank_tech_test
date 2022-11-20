@@ -117,12 +117,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Format = require("./format");
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Formatter = require("./formatter");
 &nbsp;
 class Statement {
   constructor(balance) {
     this.statement = [];
-    this.format = new Format();
+    this.formatter = new Formatter();
     this.balance = balance;
   }
 &nbsp;
@@ -131,9 +131,9 @@ class Statement {
   }
 &nbsp;
   add(transaction) {
-    let date = this.format.getTodaysDate();
+    let date = this.formatter.getTodaysDate();
     let balance = this.balance.getBalance();
-    let transactionColumns = this.format.transactionColumns(transaction);
+    let transactionColumns = this.formatter.transactionColumns(transaction);
 &nbsp;
     this.statement.push(`${date} ||${transactionColumns}|| ${balance}`);
   }

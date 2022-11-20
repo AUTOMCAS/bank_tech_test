@@ -1,14 +1,13 @@
-const Format = require('./format')
-const format = new Format()
+const Formatter = require('./formatter')
+const formatter = new Formatter()
 
 class Balance {
   constructor() {
     this.balance = 0
-    this.format = new Format();
   }
 
   getBalance() {
-    return this.format.convertNumberToCurrency(this.balance);
+    return formatter.convertNumberToCurrency(this.balance);
   }
 
   add(amount) {

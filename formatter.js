@@ -1,4 +1,4 @@
-class Format {
+class Formatter {
   getTodaysDate() {
     let today = new Date();
     let day = today.getDate();
@@ -23,4 +23,4 @@ class Format {
 
 }
 
-module.exports = Format;
+module.exports = Formatter;
