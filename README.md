@@ -50,35 +50,35 @@ From within the project directory:
 # Run node
 $ node
 
-# Create a new bankApp instance:
-const BankApp = require("./bankApp")
-const bankApp = new BankApp()
+# Create a new account instance:
+const Account = require("./account")
+const account = new Account()
 
 # Make a deposit
-bankApp.deposit(100) # valid
-bankApp.deposit(100.00) # valid
-bankApp.deposit("100") # valid
-bankApp.deposit("100.00") # valid
-bankApp.deposit("Monies!") # invalid
+account.deposit(100) # valid
+account.deposit(100.00) # valid
+account.deposit("100") # valid
+account.deposit("100.00") # valid
+account.deposit("Monies!") # invalid
 
 # Make a withdrawal
-bankApp.withdraw(100) # valid
-bankApp.withdraw(100.00) # valid
-bankApp.withdraw("100") # valid
-bankApp.withdraw("100.00") # valid
-bankApp.withdraw("Monies!") # invalid
+account.withdraw(100) # valid
+account.withdraw(100.00) # valid
+account.withdraw("100") # valid
+account.withdraw("100.00") # valid
+account.withdraw("Monies!") # invalid
 
 # Print the statement
-bankApp.printStatement()
+account.printStatement()
 ```
 
 ## Thoughts
 
 Issues related to the output being console.logs in node:  
-- `getStatement()` function in `bankApp` class is a little redundant but I struggled to find a way of testing the intended output (printing in node).
+- `getStatement()` function in `account` class is a little redundant but I struggled to find a way of testing the intended output (printing in node).
 
 - I attempted to use errors when the user inputs incorrect info but I struggled to make it work in both testing and in console.log. 
 
-Error handling could have been moved to its own class to simplify `bankApp` class
+Error handling could have been moved to its own class to simplify `account` class
 
 Earlier tests could have been refactored as I got more knowledge on how to write relevant tests.

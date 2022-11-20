@@ -1,7 +1,7 @@
 const Balance = require("./balance");
 const Statement = require("./statement");
 
-class bankApp {
+class Account {
   constructor() {
     this.balance = new Balance();
     this.statement = new Statement(this.balance);
@@ -52,4 +52,4 @@ class bankApp {
   }
 }
 
-module.exports = bankApp;
+module.exports = Account;

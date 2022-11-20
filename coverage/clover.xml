@@ -13,7 +13,7 @@
       <line num="19" count="5" type="stmt"/>
       <line num="23" count="3" type="stmt"/>
     </file>
-    <file name="bankApp.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/bankApp.js">
+    <file name="account.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/account.js">
       <metrics statements="22" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="5"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
