@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668511065944" clover="3.2.0">
-  <project timestamp="1668511065945" name="All files">
+<coverage generated="1668514129870" clover="3.2.0">
+  <project timestamp="1668514129871" name="All files">
     <metrics statements="51" coveredstatements="48" conditionals="8" coveredconditionals="8" methods="18" coveredmethods="16" elements="77" coveredelements="72" complexity="0" loc="51" ncloc="51" packages="1" files="4" classes="4"/>
     <file name="balance.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/balance.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
