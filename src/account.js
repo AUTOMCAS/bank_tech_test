@@ -37,6 +37,8 @@ class Account {
     if (isNaN(amount)) {
       console.log("Amount must be a number");
       return false;
+    } else {
+      return true;
     }
   }
 
