@@ -1,4 +1,4 @@
-class Formatter {
+class StatementFormatter {
   getTodaysDate() {
     let today = new Date();
     let day = today.getDate();
@@ -9,18 +9,15 @@ class Formatter {
   }
 
   convertNumberToCurrency(number) {
-    return number.toFixed(2)
+    return number.toFixed(2);
   }
 
   transactionColumns(transaction) {
-    const transactionAmount = this.convertNumberToCurrency(
-      transaction.amount
-    );
+    const transactionAmount = this.convertNumberToCurrency(transaction.amount);
 
     if (transaction.type == "deposit") return ` ${transactionAmount} || `;
     return ` || ${transactionAmount} `;
   }
-
 }
 
-module.exports = Formatter;
+module.exports = StatementFormatter;

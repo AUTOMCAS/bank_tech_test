@@ -1,9 +1,9 @@
-const Formatter = require("./formatter");
+const StatementFormatter = require("./statementFormatter");
 
 class Statement {
   constructor(balance) {
     this.statement = [];
-    this.formatter = new Formatter();
+    this.statementFormatter = new StatementFormatter();
     this.balance = balance;
   }
 
@@ -12,9 +12,10 @@ class Statement {
   }
 
   add(transaction) {
-    let date = this.formatter.getTodaysDate();
+    let date = this.statementFormatter.getTodaysDate();
     let balance = this.balance.getBalance();
-    let transactionColumns = this.formatter.transactionColumns(transaction);
+    let transactionColumns =
+      this.statementFormatter.transactionColumns(transaction);
 
     this.statement.push(`${date} ||${transactionColumns}|| ${balance}`);
   }
