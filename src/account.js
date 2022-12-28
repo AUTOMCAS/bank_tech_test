@@ -24,7 +24,7 @@ class Account {
     if (this.checkNumberValidity(amount) == false) return;
     const withdrawal = parseFloat(amount);
 
-    let transaction = {
+    const transaction = {
       amount: withdrawal,
       type: "withdrawal",
     };
@@ -46,7 +46,8 @@ class Account {
 
   printStatement() {
     console.log(this.statement.getHeader());
-    this.statement.get().forEach((statementRow) => {
+    const reversedStatement = this.getStatement().reverse();
+    reversedStatement.forEach((statementRow) => {
       console.log(statementRow);
     });
   }
