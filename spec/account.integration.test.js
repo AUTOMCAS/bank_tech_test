@@ -107,4 +107,19 @@ describe("Account", () => {
       expect(statement.length).toEqual(0);
     });
   });
+
+  describe("printStatement()", () => {
+    it("returns statement", () => {
+      let account = new Account();
+      account.deposit(100);
+      account.withdraw(10.55);
+
+      expect(account.printStatement()).toMatch(
+        "date || credit || debit || balance"
+      );
+      expect(account.printStatement()).toMatch(
+        "13/11/2022 || || 10.55 || 89.45"
+      );
+    });
+  });
 });

@@ -47,11 +47,14 @@ class Account {
   }
 
   printStatement() {
-    console.log(this.statement.getHeader());
+    let statementString = `${this.statement.getHeader()}\n`;
     const reversedStatement = this.getStatement().reverse();
+
     reversedStatement.forEach((statementRow) => {
-      console.log(statementRow);
+      statementString += `${statementRow}\n`;
     });
+
+    return statementString;
   }
 }
 

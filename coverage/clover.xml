@@ -1,68 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668962593858" clover="3.2.0">
-  <project timestamp="1668962593858" name="All files">
-    <metrics statements="50" coveredstatements="47" conditionals="8" coveredconditionals="8" methods="18" coveredmethods="16" elements="76" coveredelements="71" complexity="0" loc="50" ncloc="50" packages="1" files="4" classes="4"/>
-    <file name="account.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/account.js">
-      <metrics statements="22" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="5"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="6" count="3" type="stmt"/>
-      <line num="7" count="3" type="stmt"/>
-      <line num="11" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="7" type="stmt"/>
-      <line num="14" count="7" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
-      <line num="20" count="7" type="stmt"/>
-      <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="27" count="2" type="stmt"/>
-      <line num="32" count="2" type="stmt"/>
-      <line num="33" count="2" type="stmt"/>
-      <line num="37" count="11" type="cond" truecount="2" falsecount="0"/>
-      <line num="38" count="2" type="stmt"/>
-      <line num="39" count="2" type="stmt"/>
-      <line num="44" count="10" type="stmt"/>
-      <line num="48" count="0" type="stmt"/>
-      <line num="49" count="0" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
-      <line num="55" count="1" type="stmt"/>
-    </file>
-    <file name="balance.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/balance.js">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <line num="1" count="3" type="stmt"/>
-      <line num="2" count="3" type="stmt"/>
-      <line num="6" count="7" type="stmt"/>
-      <line num="10" count="16" type="stmt"/>
-      <line num="14" count="10" type="stmt"/>
-      <line num="18" count="5" type="stmt"/>
-      <line num="22" count="3" type="stmt"/>
-    </file>
-    <file name="formatter.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/formatter.js">
-      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="3" count="13" type="stmt"/>
-      <line num="4" count="13" type="stmt"/>
-      <line num="5" count="13" type="stmt"/>
-      <line num="6" count="13" type="stmt"/>
-      <line num="8" count="13" type="stmt"/>
-      <line num="12" count="34" type="stmt"/>
-      <line num="16" count="16" type="stmt"/>
-      <line num="20" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="21" count="5" type="stmt"/>
-      <line num="26" count="4" type="stmt"/>
-    </file>
-    <file name="statement.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/statement.js">
-      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+<coverage generated="1672241394135" clover="3.2.0">
+  <project timestamp="1672241394135" name="All files">
+    <metrics statements="53" coveredstatements="53" conditionals="8" coveredconditionals="8" methods="18" coveredmethods="18" elements="79" coveredelements="79" complexity="0" loc="53" ncloc="53" packages="1" files="4" classes="4"/>
+    <file name="account.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/src/account.js">
+      <metrics statements="25" coveredstatements="25" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
       <line num="1" count="2" type="stmt"/>
-      <line num="5" count="6" type="stmt"/>
-      <line num="6" count="6" type="stmt"/>
-      <line num="7" count="6" type="stmt"/>
-      <line num="11" count="16" type="stmt"/>
-      <line num="15" count="12" type="stmt"/>
-      <line num="16" count="12" type="stmt"/>
-      <line num="17" count="12" type="stmt"/>
-      <line num="19" count="12" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="27" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="6" count="13" type="stmt"/>
+      <line num="7" count="13" type="stmt"/>
+      <line num="11" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="10" type="stmt"/>
+      <line num="14" count="10" type="stmt"/>
+      <line num="19" count="10" type="stmt"/>
+      <line num="20" count="10" type="stmt"/>
+      <line num="24" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="3" type="stmt"/>
+      <line num="27" count="3" type="stmt"/>
+      <line num="32" count="3" type="stmt"/>
+      <line num="33" count="3" type="stmt"/>
+      <line num="37" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="3" type="stmt"/>
+      <line num="39" count="3" type="stmt"/>
+      <line num="41" count="15" type="stmt"/>
+      <line num="46" count="12" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="53" count="2" type="stmt"/>
+      <line num="54" count="4" type="stmt"/>
+      <line num="57" count="2" type="stmt"/>
+      <line num="61" count="2" type="stmt"/>
+    </file>
+    <file name="balance.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/src/balance.js">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="1" count="4" type="stmt"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="6" count="20" type="stmt"/>
+      <line num="10" count="20" type="stmt"/>
+      <line num="14" count="15" type="stmt"/>
+      <line num="18" count="6" type="stmt"/>
+      <line num="22" count="4" type="stmt"/>
+    </file>
+    <file name="statement.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/src/statement.js">
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="1" count="3" type="stmt"/>
+      <line num="5" count="16" type="stmt"/>
+      <line num="6" count="16" type="stmt"/>
+      <line num="7" count="16" type="stmt"/>
+      <line num="11" count="18" type="stmt"/>
+      <line num="15" count="16" type="stmt"/>
+      <line num="16" count="16" type="stmt"/>
+      <line num="18" count="16" type="stmt"/>
+      <line num="20" count="16" type="stmt"/>
+      <line num="24" count="3" type="stmt"/>
+      <line num="28" count="3" type="stmt"/>
+    </file>
+    <file name="statementFormatter.js" path="/home/cas/Projects/Makers/challenge_week/bank_tech_test/src/statementFormatter.js">
+      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="3" count="17" type="stmt"/>
+      <line num="4" count="17" type="stmt"/>
+      <line num="5" count="17" type="stmt"/>
+      <line num="6" count="17" type="stmt"/>
+      <line num="8" count="17" type="stmt"/>
+      <line num="12" count="42" type="stmt"/>
+      <line num="16" count="20" type="stmt"/>
+      <line num="18" count="20" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
     </file>
   </project>
 </coverage>
