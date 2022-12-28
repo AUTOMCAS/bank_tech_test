@@ -1,19 +1,21 @@
 # Bank App tech test
 
-## Functionality
+## The objective
 
-[Planning diagram](https://raw.githubusercontent.com/AUTOMCAS/bank_tech_test/main/diagram.png)
+Build a simple bank account application to be run from the command line.
+
+The application must allow a user to:
 
 - Make a deposit
 - Make a withdrawal (users are allowed to be overdrawn)
-- Print a statement with the date, transaction and balance shown as below
+- Print a statement with a header, the date, transaction and balance.
 
-```
-date || credit || debit || balance
-14/01/2023 || || 500.00 || 2500.00
-13/01/2023 || 2000.00 || || 3000.00
-10/01/2023 || 1000.00 || || 1000.00
-```
+## Approach
+
+Initial planning diagram for classes and functions.
+![Planning diagram](https://github.com/AUTOMCAS/bank_tech_test/blob/main/misc/diagram.png?raw=true)
+
+Classes have single responsibilities with an account handling user interaction and balance, statement and formatting classes handling modification of the their respective data.
 
 ## Setup
 
@@ -97,3 +99,11 @@ account.withdraw("Monies!") # invalid
 # Print the statement
 account.printStatement()
 ```
+
+## Example output
+
+![example](https://github.com/AUTOMCAS/bank_tech_test/blob/main/misc/bank-example.png?raw=true)
+
+## Test coverage
+
+![test coverage](https://github.com/AUTOMCAS/bank_tech_test/blob/main/misc/bank-test-coverage.png?raw=true)
