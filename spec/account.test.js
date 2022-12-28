@@ -2,7 +2,7 @@ const Account = require("../src/account");
 
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
-describe("Bank", () => {
+describe("Account", () => {
   describe("getStatement()", () => {
     let account = new Account();
     it("returns correct statement after initial deposit of 1000", () => {
@@ -11,7 +11,6 @@ describe("Bank", () => {
 
       let expectedRow = "13/11/2022 || 1000.00 || || 1000.00";
       expect(statement[0]).toEqual(expectedRow);
-      expect(statement.includes(expectedRow)).toBe(true);
     });
 
     it("returns correct statement after deposit of 2000", () => {
@@ -39,7 +38,6 @@ describe("Bank", () => {
 
       let expectedRow = "13/11/2022 || 100.00 || || 100.00";
       expect(statement[0]).toEqual(expectedRow);
-      expect(statement.includes(expectedRow)).toBe(true);
     });
     it("Adds another 10.55 to the balance as float", () => {
       let statement = account.getStatement();
@@ -55,7 +53,6 @@ describe("Bank", () => {
 
       let expectedRow = "13/11/2022 || 10.00 || || 120.55";
       expect(statement[2]).toEqual(expectedRow);
-      expect(statement.includes(expectedRow)).toBe(true);
     });
 
     it("Allows user to deposit when amount is a number as a string and to 2 decimal places", () => {
@@ -64,7 +61,6 @@ describe("Bank", () => {
 
       let expectedRow = "13/11/2022 || 0.45 || || 121.00";
       expect(statement[3]).toEqual(expectedRow);
-      expect(statement.includes(expectedRow)).toBe(true);
       expect(statement.length).toEqual(4);
     });
 
@@ -85,7 +81,6 @@ describe("Bank", () => {
 
       let expectedRow = "13/11/2022 || || 10.55 || 89.45";
       expect(statement[1]).toEqual(expectedRow);
-      expect(statement.includes(expectedRow)).toBe(true);
     });
 
     it("Does not subtract from deposit if amount is invalid", () => {
