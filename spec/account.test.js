@@ -1,4 +1,4 @@
-const Account = require("./account");
+const Account = require("../src/account");
 
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 

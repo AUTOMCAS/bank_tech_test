@@ -1,5 +1,5 @@
-const Formatter = require('./formatter')
-const formatter = new Formatter()
+const Formatter = require("../src/formatter");
+const formatter = new Formatter();
 
 jest.useFakeTimers().setSystemTime(new Date("2022-11-13"));
 
@@ -21,34 +21,25 @@ describe("Formatter", () => {
     it("returns correct formatted for a deposit", () => {
       transaction = { amount: 500, type: "deposit" };
 
-      expect(formatter.transactionColumns(transaction)).toEqual(
-        " 500.00 || "
-      );
+      expect(formatter.transactionColumns(transaction)).toEqual(" 500.00 || ");
     });
 
     it("returns correct formatted for any deposit", () => {
       transaction = { amount: 400, type: "deposit" };
 
-      expect(formatter.transactionColumns(transaction)).toEqual(
-        " 400.00 || "
-      );
+      expect(formatter.transactionColumns(transaction)).toEqual(" 400.00 || ");
     });
 
     it("returns correct formatted for a withdrawal", () => {
       transaction = { amount: 500, type: "withdrawal" };
 
-      expect(formatter.transactionColumns(transaction)).toEqual(
-        " || 500.00 "
-      );
+      expect(formatter.transactionColumns(transaction)).toEqual(" || 500.00 ");
     });
 
     it("returns correct formatted for a any withdrawal", () => {
       transaction = { amount: 200, type: "withdrawal" };
 
-      expect(formatter.transactionColumns(transaction)).toEqual(
-        " || 200.00 "
-      );
+      expect(formatter.transactionColumns(transaction)).toEqual(" || 200.00 ");
     });
   });
-})
-
+});

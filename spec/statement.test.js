@@ -1,5 +1,5 @@
-const Statement = require("./statement");
-const Balance = require("./balance");
+const Statement = require("../src/statement");
+const Balance = require("../src/balance");
 
 const balance = new Balance();
 const statement = new Statement(balance);
@@ -45,7 +45,7 @@ describe("Statement", () => {
       statement.add(deposit);
 
       const statementContent = statement.get();
-      expect(statementContent[0]).toEqual("13/11/2022 || 500.00 || || 500.00")
+      expect(statementContent[0]).toEqual("13/11/2022 || 500.00 || || 500.00");
     });
 
     it("Adds a withdrawal and balance is updated", () => {
@@ -59,12 +59,9 @@ describe("Statement", () => {
 
       const statementContent = statement.get();
 
-      expect(statementContent[0]).toEqual("13/11/2022 || || 50.00 || 450.00")
+      expect(statementContent[0]).toEqual("13/11/2022 || || 50.00 || 450.00");
     });
-
   });
-
-  
 
   describe("getHeader()", () => {
     it("returns statement header", () => {
