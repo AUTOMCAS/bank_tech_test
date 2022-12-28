@@ -1,6 +1,7 @@
 # Bank App tech test
 
 ## Functionality
+
 [Planning diagram](https://raw.githubusercontent.com/AUTOMCAS/bank_tech_test/main/diagram.png)
 
 - Make a deposit
@@ -14,19 +15,20 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-
 ## Setup
 
 This guidance assumes you have npm and nvm installed and are confident in pulling this repository.
 
 Install node using nvm if you do not have it:
+
 ```
 $ nvm install node
 $ nvm use node
 ```
 
 Install dependencies:
-``` bash
+
+```bash
 # From within the project directory:
 $ npm install
 ```
@@ -45,13 +47,15 @@ $ jest --coverage
 ```
 
 ## Running the code
+
 From within the project directory:
+
 ```bash
 # Run node
 $ node
 
 # Create a new account instance:
-const Account = require("./account")
+const Account = require("./src/account")
 const account = new Account()
 
 # Make a deposit
@@ -74,10 +78,11 @@ account.printStatement()
 
 ## Thoughts
 
-Issues related to the output being console.logs in node:  
+Issues related to the output being console.logs in node:
+
 - `getStatement()` function in `account` class is a little redundant but I struggled to find a way of testing the intended output (printing in node).
 
-- I attempted to use errors when the user inputs incorrect info but I struggled to make it work in both testing and in console.log. 
+- I attempted to use errors when the user inputs incorrect info but I struggled to make it work in both testing and in console.log.
 
 Error handling could have been moved to its own class to simplify `account` class
 
