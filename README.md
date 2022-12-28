@@ -48,42 +48,52 @@ $ jest --coverage
 
 ## Running the code
 
-From within the project directory:
+**From within the project directory:**
+
+To run a quick example in node:
+
+```bash
+const Account = require("./src/account")
+const account = new Account()
+
+account.deposit(100)
+account.deposit(250)
+account.withdraw(50)
+account.printStatement()
+```
+
+Detailed running process:
 
 ```bash
 # Run node
 $ node
+```
 
+```bash
 # Create a new account instance:
 const Account = require("./src/account")
 const account = new Account()
+```
 
+```bash
 # Make a deposit
 account.deposit(100) # valid
 account.deposit(100.00) # valid
 account.deposit("100") # valid
 account.deposit("100.00") # valid
 account.deposit("Monies!") # invalid
+```
 
+```bash
 # Make a withdrawal
 account.withdraw(100) # valid
 account.withdraw(100.00) # valid
 account.withdraw("100") # valid
 account.withdraw("100.00") # valid
 account.withdraw("Monies!") # invalid
+```
 
+```bash
 # Print the statement
 account.printStatement()
 ```
-
-## Thoughts
-
-Issues related to the output being console.logs in node:
-
-- `getStatement()` function in `account` class is a little redundant but I struggled to find a way of testing the intended output (printing in node).
-
-- I attempted to use errors when the user inputs incorrect info but I struggled to make it work in both testing and in console.log.
-
-Error handling could have been moved to its own class to simplify `account` class
-
-Earlier tests could have been refactored as I got more knowledge on how to write relevant tests.
