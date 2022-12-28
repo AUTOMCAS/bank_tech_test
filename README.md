@@ -15,7 +15,8 @@ The application must allow a user to:
 Initial planning diagram for classes and functions.
 ![Planning diagram](https://github.com/AUTOMCAS/bank_tech_test/blob/main/misc/diagram.png?raw=true)
 
-Classes have single responsibilities with an account handling user interaction and balance, statement and formatting classes handling modification of the their respective data.
+- Following a test driven development process with unit and integration tests to develop and refactor each class and function.
+- Classes have single responsibilities with an account handling user interaction and balance, statement and formatting classes handling modification of the their respective data.
 
 ## Setup
 
